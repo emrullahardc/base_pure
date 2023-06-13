@@ -40,11 +40,9 @@ fi
 
 cp  .env-sail .env
 
-docker compose down -v
+#docker compose build --no-cache
 
-docker compose build --no-cache
-
-docker compose up --force-recreate
+docker compose up #--force-recreate
 
 #
 #docker exec -it oc_php php artisan install --ready

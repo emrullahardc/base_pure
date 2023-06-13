@@ -38,7 +38,7 @@ services:
 
   # Database Server
   database:
-    image: mysql:8.0
+    image: mariadb:latest
     container_name: ${APP_NAME}_database
     ports:
         - "3306:3306"

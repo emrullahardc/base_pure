@@ -81,7 +81,6 @@
         "visiosoft/singlefile-field_type": "^1.0",
         "visiosoft/multiple-field_type": "^1.0",
         "visiosoft/media-field_type": "^1.0",
-        "visiosoft/location-module": "^1.0",
         "visiosoft/input_file-field_type": "^1.0",
         "visiosoft/defaultadmin-theme": "^1.0",
         "visiosoft/json-field_type": "^1.0",
@@ -143,7 +142,8 @@
         "preferred-install": "dist",
         "optimize-autoloader": true,
         "allow-plugins": {
-            "visiosoft/composer-merge-plugin": true
+            "visiosoft/composer-merge-plugin": true,
+            "php-http/discovery": true
         }
     }
 }

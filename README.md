@@ -18,6 +18,9 @@
 
 OpenClassify is modular and most advanced open source classified platform build with Laravel 8 & PHP 8.1 Supported. Included Pyrocms 3.9
 
+## About Base
+
+Base consist of basic structure to install any project without CMS or Openclassify. You can install them later if you want. 
 
 ## Translation
 
@@ -38,7 +41,16 @@ Openclassify support 22+ languages. If you'd like to contribute translations, pl
 - Fileinfo PHP Extension
 - Tokenizer PHP Extension
 - GD Library (>=2.0) **OR** Imagick PHP extension (>=6.5.7)
- 
+
+## Via Docker (Recommended)
+
+Install Docker then run :
+
+```bash
+bash install.sh
+```
+
+Finished. It's that easy!
  
 ## Via Composer
 
