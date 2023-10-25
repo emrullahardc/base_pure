@@ -87,7 +87,9 @@
         "visiosoft/language_switcher-plugin": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "visiosoft/global_helper-extension": "*",
-        "visiosoft/base-theme": "^1.0"
+        "visiosoft/base-theme": "^1.0",
+        "visiosoft/server-module": "*",
+        "visiosoft/site-module": "*"
     },
     "replace": {
         "anomaly/streams-platform": "*"
