@@ -16,20 +16,30 @@
     ],
     "require": {
         "visiosoft/streams-platform": "~1.9.0",
+        "anomaly/private_storage_adapter-extension": "~1.1.0",
         "anomaly/default_authenticator-extension": "~2.1.0",
-        "anomaly/user_security_check-extension": "~2.1.0",
+        "anomaly/relationship-field_type": "~2.2.0",
+        "anomaly/polymorphic-field_type": "~2.1.0",
         "anomaly/checkboxes-field_type": "~2.4.0",
         "anomaly/datetime-field_type": "~3.0.0",
         "anomaly/textarea-field_type": "~2.1.0",
-        "anomaly/boolean-field_type": "~2.3.0",
+        "anomaly/integer-field_type": "~2.1.0",
+        "anomaly/select-field_type": "2.3.8",
+        "anomaly/addon-field_type": "~2.2.0",
+        "anomaly/email-field_type": "~2.1.0",
+        "anomaly/tags-field_type": "~2.4.0",
         "anomaly/slug-field_type": "~2.1.0",
         "anomaly/text-field_type": "~2.2.0",
+        "anomaly/multiple-field_type": "~2.3.0",
+        "anomaly/boolean-field_type": "~2.3.0",
         "anomaly/url-field_type": "~2.2.0",
         "anomaly/configuration-module": "~2.1.0",
         "anomaly/settings-module": "~2.4.0",
-        "anomaly/users-module": "~2.5.0",
-        "visiosoft/decimal-field_type": "~2.1.0",
-        "visiosoft/integer-field_type": "~2.1.0",
+        "anomaly/users-module": "2.6.x-dev",
+        "anomaly/files-module": "~2.6.0",
+        "anomaly/preferences-module": "~2.2.0",
+        "anomaly/helper-plugin": "~2.1.0",
+        "google/recaptcha": "1.2.*",
         "sentry/sentry-laravel": "2.3.1",
         "composer/composer": "2.*",
         "visiosoft/composer-merge-plugin": "2.*",
@@ -39,7 +49,8 @@
         "fruitcake/laravel-cors": "^2.0",
         "visiosoft/base-theme": "^1.0",
         "visiosoft/server-module": "*",
-        "visiosoft/site-module": "*"
+        "visiosoft/site-module": "*",
+        "php-http/message-factory": "^1.1"
     },
     "replace": {
         "anomaly/streams-platform": "*"
@@ -51,6 +62,10 @@
         "symfony/dom-crawler": "3.1.*"
     },
     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/emrullahardc/users-module.git"
+        },
         {
             "type": "composer",
             "url": "https://packages.pyrocms.com"
