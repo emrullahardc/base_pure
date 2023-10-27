@@ -4,24 +4,18 @@ namespace Database\Seeders;
 
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
-use Anomaly\NavigationModule\Menu\Contract\MenuRepositoryInterface;
 use Anomaly\UsersModule\Role\Contract\RoleRepositoryInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
-use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\ArgvInput;
 use Visiosoft\AdvsModule\Adv\Command\DeleteInstaller;
-use WidgetSeeder;
-use ZipArchive;
 
 class DatabaseSeeder extends Seeder
 {
-    protected $widgets;
-    protected $menus;
     protected $users;
     protected $roles;
     protected $activator;
@@ -30,8 +24,6 @@ class DatabaseSeeder extends Seeder
     protected $command;
 
     public function __construct(
-        WidgetRepositoryInterface $widgets,
-        MenuRepositoryInterface $menus,
         UserRepositoryInterface $users,
         DiskRepositoryInterface $disks,
         FolderRepositoryInterface $folders,
@@ -40,8 +32,6 @@ class DatabaseSeeder extends Seeder
         Command $command
     )
     {
-        $this->widgets = $widgets;
-        $this->menus = $menus;
         $this->users = $users;
         $this->roles = $roles;
         $this->activator = $activator;
@@ -92,7 +82,6 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
         DB::unprepared($settings);
         Model::reguard();
-        $this->call(WidgetSeeder::class);
 
         //Delete Installer
         dispatch_now(new DeleteInstaller());
@@ -137,39 +126,6 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        //Banner Image Folder
-        if (is_null($this->folders->findBy('slug', 'banner_images'))) {
-            $disk = $this->disks->findBySlug('local');
 
-            $this->folders->create([
-                'en' => [
-                    'name' => 'Banner Images',
-                    'description' => 'A folder for Banner Images.',
-                ],
-                'slug' => 'banner_images',
-                'disk' => $disk,
-                'allowed_types' => [
-                    'jpg', 'jpeg', 'png'
-                ],
-            ]);
-        }
-
-
-        //Create Ads Documents Folder
-        if (is_null($this->folders->findBy('slug', 'ads_documents'))) {
-            $disk = $this->disks->findBySlug('local');
-
-            $this->folders->create([
-                'en' => [
-                    'name' => 'Ads Documents',
-                    'description' => 'A folder for Ads Documents.',
-                ],
-                'slug' => 'ads_documents',
-                'disk' => $disk,
-                'allowed_types' => [
-                    'pdf', 'doc', 'docx', 'xls', 'xlsx',
-                ],
-            ]);
-        }
     }
 }
